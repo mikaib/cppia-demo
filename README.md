@@ -2,7 +2,7 @@
 - the host *must* be compiled with `-D scriptable`
 - the host *must* export a file of the symbols that it includes using `-D dll_export=export_classes.info`
 - the host *must* stub all calls to externs through a haxe function if needed by the module (don't allow the module to directly call externs!)
-- the host *must* ensure it includes all externs and proxies using `--macro include("my_package")`
+- the host *must* ensure it includes all externs and stubs using `--macro include("my_package")`
 - the host *must* ensure that functions don't get DCE'd using `-dce no`
 - the host *should* bypass the stubbed functions whenever possible to avoid overhead, a few strategies from the top of my head:
   - inlining the stubs if `scriptable` or `cppia` is not set.
