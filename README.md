@@ -11,6 +11,14 @@
 - the module *must* not use any types that are relevant to C++ syntax (like `cpp.Star<T>` or `cpp.RawPointer<T>`), but haxe-ified types like `cpp.Pointer<T>` are OK.
 - the module *must* import the file of symbols using `-D dll_import=export_classes.info`
 - the module *must* only call functions or use variables which support `Dynamic`
+- the module *should* avoid having the same module paths/names as it may lead to undesired behaviour. 
+
+# good to know
+- inheritance should work as expected, but is known for having edge-cases in complicated scenarios. if you notice weird behaviour please report it.
+- the host/module boundary is very flexible, you can even construct classes defined in the module from the host. 
+- loading a module from a string expects a cppia module built with debug.
+- related to above, but cppia is a binary format by default. if built with debug you get a human-readable representation.
+- you can get specific classes from the module within the host (see the documentation for Module)
 
 # what this demo shows
 - How to call a native function.
