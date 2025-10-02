@@ -1,0 +1,15 @@
+# input
+-cp Module
+-main ModuleMain
+
+# this define imports the "symbols' file that the host exports
+-D dll_import=export_classes.info
+
+# defines
+-D DEMO_STUB
+
+# libraries
+-L cppia_demo
+
+# output
+--cppia ./Binary/output.cppia

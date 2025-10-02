@@ -1,0 +1,23 @@
+<xml>
+    <pragma once="true" />
+    <set name="extern_demo_native" value="${haxelib:cppia_demo}/Native" />
+
+    <section>
+        <files id="extern_demo_files">
+            <compilerflag value="-I${extern_demo_native}" />
+            <file name="${extern_demo_native}/extern_demo.cpp" />
+        </files>
+
+        <files id="haxe">
+            <compilerflag value="-I${extern_demo_native}" />
+        </files>
+
+        <files id="__main__">
+            <compilerflag value="-I${extern_demo_native}" />
+        </files>
+
+        <target id="haxe">
+            <files id="extern_demo_files" />
+        </target>
+    </section>
+</xml>

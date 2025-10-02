@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="HAXE_MODULE" version="4">
+  <component name="HaxeModuleSettingsStorage">
+    <option name="buildConfig" value="1" />
+    <option name="haxeTarget" value="C++" />
+    <option name="hxmlPath" value="$MODULE_DIR$/Host.hxml" />
+    <option name="outputFolder" value="$MODULE_DIR$/Binary" />
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/Host" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Library/Source" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Module" isTestSource="false" />
+    </content>
+    <orderEntry type="jdk" jdkName="Haxe toolkit" jdkType="Haxe toolkit" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

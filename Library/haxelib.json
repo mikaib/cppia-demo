@@ -1,0 +1,11 @@
+{
+  "name": "cppia_demo",
+  "license": "MIT",
+  "tags": ["extern"],
+  "description": "Demo on how to use cppia.",
+  "version": "1.0.0",
+  "classPath": "Source/",
+  "releasenote": "heya.",
+  "contributors": ["mikaib"],
+  "dependencies": {}
+}

@@ -1,0 +1,24 @@
+# input
+-cp Host
+-main HostMain
+
+# the actual flag to enable cppia
+-D scriptable
+
+# defines
+-D DEMO_STUB
+
+# this define exports a file that cppia can use to know what is already present in the host
+-D dll_export=export_classes.info
+
+# disabled DCE to guarentee that all functions are kept
+-dce no
+
+# this will guarentee that all functions from our library are included (because cppia may not contain their implementation)
+--macro include("my_extern")
+
+# libraries
+-L cppia_demo
+
+# output
+--cpp ./Binary
