@@ -15,5 +15,16 @@
     </content>
     <orderEntry type="jdk" jdkName="Haxe toolkit" jdkType="Haxe toolkit" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library name="Haxelib: cppia_demo:1.0.0 [dev]">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/Library/Source" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/Library/Source" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>

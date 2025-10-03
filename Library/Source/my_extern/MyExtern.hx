@@ -15,6 +15,7 @@ private extern class _MyExtern {
 }
 
 class MyExtern {
+
     public static #if (!DEMO_STUB) inline #end function squared(x: Int): Int {
         return _MyExtern._squared(x);
     }
@@ -29,4 +30,5 @@ class MyExtern {
     public static #if (!DEMO_STUB) inline #end function sum_of_two_ints(pair: TwoInts): Int {
         return _MyExtern._sum_of_two_ints(pair);
     }
+
 }

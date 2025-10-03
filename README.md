@@ -30,8 +30,8 @@
 # running
 - first use ``haxelib dev cppia_demo ./Library``
 - then use ``haxe Host.hxml`` to build the host
-- then use ``haxe Module.hxml`` to build the module
-- now run the host at ``./Binary/HostMain.exe``
+- now run the host using ``./Binary/HostMain.exe`` from the root of the repo
+- you should see the output below, and it should change when you modify the code in `ModuleMain.hx`
 
 # expected output
 ```

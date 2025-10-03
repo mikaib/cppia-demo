@@ -2,6 +2,7 @@ import my_extern.MyExtern;
 import my_extern.TwoInts;
 import cpp.cppia.Host;
 import haxe.io.Path;
+import sys.FileSystem;
 
 class HostMain {
 
@@ -36,10 +37,25 @@ class HostMain {
 
     public static function main(): Void {
         test();
-        Host.runFile(Path.join([
-            Path.directory(Sys.programPath()),
-            "output.cppia"
-        ]));
+
+        var root = Path.directory(Sys.programPath());
+        var classPath = Path.join([ root, "..", "Module", "ModuleMain.hx" ]);
+        var modulePath = Path.join([ root, "output.cppia" ]);
+        var last = -1.0;
+
+        while (true) {
+            var stat = FileSystem.stat(classPath);
+            var mtime = stat.mtime.getTime();
+
+            if (mtime != last) {
+                Sys.command('haxe Module.hxml');
+                Host.runFile(modulePath);
+                Sys.println("------ Please make changes to ModuleMain.hx to see them here, or press Ctrl-C to exit ------");
+                last = mtime;
+            }
+
+            Sys.sleep(1);
+        }
     }
 
 }

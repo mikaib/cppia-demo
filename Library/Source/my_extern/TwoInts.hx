@@ -5,18 +5,19 @@ package my_extern;
 @:native('demo_two_ints')
 @:structAccess
 @:unreflective
-private extern class _NativeTwoInts {
+private extern class _TwoInts {
     public var a: cpp.Int32;
     public var b: cpp.Int32;
 
     @:native("new demo_two_ints")
-    public static function make(): cpp.Pointer<_NativeTwoInts>;
+    public static function make(): cpp.Pointer<_TwoInts>;
 
     @:native("log_values")
     public function log_values(): Void;
 }
 
-abstract TwoInts(cpp.Pointer<_NativeTwoInts>) {
+abstract TwoInts(cpp.Pointer<_TwoInts>) {
+
     public var a(get, set): Int;
     #if (!DEMO_STUB) inline #end function get_a(): Int return this.ptr.a;
     #if (!DEMO_STUB) inline #end function set_a(value: Int): Int return this.ptr.a = value;
@@ -26,7 +27,7 @@ abstract TwoInts(cpp.Pointer<_NativeTwoInts>) {
     #if (!DEMO_STUB) inline #end function set_b(value: Int): Int return this.ptr.b = value;
 
     public #if (!DEMO_STUB) inline #end function new(a: Int, b: Int) {
-        this = _NativeTwoInts.make();
+        this = _TwoInts.make();
         abstract.a = a;
         abstract.b = b;
     }
@@ -38,4 +39,5 @@ abstract TwoInts(cpp.Pointer<_NativeTwoInts>) {
     public #if (!DEMO_STUB) inline #end function destroy(): Void {
         this.destroy();
     }
+
 }
